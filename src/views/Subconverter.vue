@@ -333,7 +333,6 @@ export default {
         },
         shortTypes: {
           "v1.mk": "https://v1.mk/short",
-          "dl.ssidw.dpdns.org": "https://dl.ssidw.dpdns.org/short",
           "d1.mk": "https://d1.mk/short",
           "dlj.tf": "https://dlj.tf/short",
           "suo.yt": "https://suo.yt/short",
@@ -350,7 +349,6 @@ export default {
         },
         backendOptions: [
           { value: "https://subapi.cmliussss.net" },
-          { value: "https://subapi.ssidw.dpdns.org" },
           { value: "https://subapi.fxxk.dedyn.io" },
           { value: "https://url.v1.mk" },
           { value: "https://sub.d1.mk" },
@@ -1319,6 +1317,7 @@ async analyzeUrl() {
   }
 };
 </script>
+
 
 
 
