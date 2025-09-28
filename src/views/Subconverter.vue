@@ -339,6 +339,7 @@ export default {
         },
         customBackend: {
           "CM负载均衡后端【vless reality+hy1+hy2】": "https://subapi.cmliussss.net",
+          "CM负载均衡后端": "https://subapi.ssidw.dpdns.org/",
           "CM应急备用后端【vless reality+hy1+hy2】": "https://subapi.fxxk.dedyn.io",
           "肥羊增强型后端【vless reality+hy1+hy2】": "https://url.v1.mk",
           "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",
@@ -348,6 +349,7 @@ export default {
         },
         backendOptions: [
           { value: "https://subapi.cmliussss.net" },
+          { value: "https://dl.ssidw.dpdns.org" },
           { value: "https://subapi.fxxk.dedyn.io" },
           { value: "https://url.v1.mk" },
           { value: "https://sub.d1.mk" },
@@ -1310,3 +1312,4 @@ export default {
   }
 };
 </script>
+
