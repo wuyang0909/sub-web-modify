@@ -333,7 +333,7 @@ export default {
         },
         shortTypes: {
           "v1.mk": "https://v1.mk/short",
-          "v2.mk": "https://dl.ssidw.dpdns.org/short",
+          "dl.ssidw.dpdns.org": "https://dl.ssidw.dpdns.org/short",
           "d1.mk": "https://d1.mk/short",
           "dlj.tf": "https://dlj.tf/short",
           "suo.yt": "https://suo.yt/short",
@@ -1313,5 +1313,6 @@ export default {
   }
 };
 </script>
+
 
 
