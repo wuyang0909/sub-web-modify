@@ -1113,26 +1113,32 @@ export default {
           this.loading2 = false;
         });
     },
-    analyzeUrl() {
-      if (this.loadConfig.indexOf("target") !== -1) {
-        return this.loadConfig;
-      } else {
-        this.loading3 = true;
-        return (async () => {
-          try {
-            let response = await fetch(this.loadConfig, {
-              method: "GET",
-              redirect: "follow",
-            });
-            return response.url;
-          } catch (e) {
-            this.$message.error("解析短链接失败，请检查短链接服务端是否配置跨域：" + e)
-          } finally {
-            this.loading3 = false;
-          }
-        })();
-      }
-    },
+async analyzeUrl() {
+  if (this.loadConfig.includes("target=")) {
+    return this.loadConfig;
+  }
+
+  this.loading3 = true;
+  try {
+    const response = await fetch(this.loadConfig, {
+      method: "GET",
+      redirect: "follow",
+      mode: "cors"
+    });
+
+    if (response.ok) {
+      return response.url || this.loadConfig;
+    } else {
+      throw new Error(`HTTP ${response.status}`);
+    }
+  } catch (e) {
+    this.$message.error("解析短链接失败，可能是跨域问题或短链无效：" + e.message);
+    return this.loadConfig; // fallback
+  } finally {
+    this.loading3 = false;
+  }
+},
+
     confirmLoadConfig() {
       if (this.loadConfig.trim() === "" || !this.loadConfig.trim().includes("http")) {
         this.$message.error("待解析的订阅链接不合法");
@@ -1313,6 +1319,7 @@ export default {
   }
 };
 </script>
+
 
 
 
